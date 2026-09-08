@@ -6,8 +6,7 @@ This repository contains Stata scripts adapted for the present study to generate
 
 ## Author
 
-Matthew Johnson
-University of Southampton
+Matthew Johnson, University of Southampton
 
 ## Citation
  
