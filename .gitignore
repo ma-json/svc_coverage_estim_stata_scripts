@@ -1,0 +1,23 @@
+
+# Data files
+*.dta
+*.csv
+*.xlsx
+*.xls
+
+# Stata logs and temporary files
+*.log
+*.smcl
+*.ster
+*.tmp
+*.bak
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Generated outputs
+output/
+outputs/
+figures/
+tables/
