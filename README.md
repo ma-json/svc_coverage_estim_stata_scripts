@@ -11,13 +11,20 @@ University of Southampton
 
 ## Citation
  
-If you use this code, please cite:
-
-Johnson, M. et al (2026). Published paper. DOI: [to be added]
+If you use this code, please cite the associated publication:
+ 
+Johnson, M., et al. (2026). Title of the paper. Journal Name. DOI: xx.xxxx/xxxxx [to be added]
+ 
+The code repository is provided to support reproducibility of the published research.
 
 ## Software
 
 The scripts were developed using using Stata SE Version 16.0 (Stata-Corp, College Station, TX, USA)
+
+## Repository structure
+ 
+code/
+  Stata scripts
 
 ## Workflow
 
