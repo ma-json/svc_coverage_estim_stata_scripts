@@ -1,7 +1,12 @@
-cff-version: 1.1.0
-message: "If you use this code, please cite the associated journal article."
+cff-version: 1.2.0
+message: "If you use this code, please cite the associated journal article. Until publication, however, cite this software repository."
 title: "Child health service coverage estimation using routine health data from Ghana’s Eastern Region"
 authors:
 - family-names: Johnson
-given-names: Matthew
-affiliation: "University of Southampton"
+  given-names: Matthew
+  affiliation: "University of Southampton"
+
+preferred-citation:
+type: article
+doi: 10.xxxx/xxxxx [to be added]
+title: "Child health service coverage estimation using routine health data from Ghana’s Eastern Region"
