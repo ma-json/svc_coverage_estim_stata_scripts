@@ -13,7 +13,7 @@
 
 
 * 					Part 4: Apply adjustments for low reporting rate
-* 					Part 5: Apply adjustments for low reporting completeness
+* 					Part 5: Apply k-factor adjustments for reporting completeness
 * 					Part 6: Compare reported/adjusted data on low district reporting rates (completeness)
 * 					Appendix 1: Base script sourced from Countdown
 *

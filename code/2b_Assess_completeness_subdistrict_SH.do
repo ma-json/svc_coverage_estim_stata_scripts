@@ -11,8 +11,8 @@
 *   Details:		Part 0: Set global variables
 
 
-* 					Part 3: Apply adjustments for low reporting rate ####
-* 					Part 4: Apply adjustments for low reporting completeness
+* 					Part 3: Apply adjustments for low reporting rate
+* 					Part 4: Apply k-factor adjustments for reporting completeness
 * 					Part 5: Compare reported/adjusted data on low subdistrict reporting rates (completeness)
 * 					Appendix 1: Base script sourced from Countdown
 *
@@ -232,7 +232,7 @@ save "2b_ii_DHIMS2_compare_reported_adjusted_rates.dta", replace
 local tmpfile: dir . files "_orgunitlevel3_subdistrict_group_*.dta"
 foreach file of local tmpfile {
 	erase "`file'"
-}
+} // drop temporary files from the current directory
 
 
 

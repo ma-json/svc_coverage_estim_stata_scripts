@@ -6,7 +6,7 @@
 *   Creation Date:	18/07/2024
 *
 * 	Purpose:		To merge the Countdown input data templates and produce the base analytical datasets that will be 
-*					required for the Countdown implementation of the Maina method
+*					required for implementation of the Maina approach
 *
 *   Details:		Part 0: Set global variables
 * 					Part 1: Import and rework individual data files
@@ -151,7 +151,6 @@ rename ( ///
 	d_1_rc d_1_exp d_1_rate ///
 	ipd_1_rc ipd_1_exp ipd_1_rate ///
 	mi_10_11_rc mi_10_11_exp mi_10_11_rate ///
-	pt_1b_1 pt_1b_2 pt_1b_6 pt_1b_5 pt_1b_3 pt_1b_4 pt_1b_7 pt_1a_1 pt_1a_3 pt_1a_5_6 pt_1a_7 ///
 )	///
 ( ///
 	anc1 anc4 ipt2 idelv csection pnc48h fp_new fp_revisits fp_total bcg penta1 penta2 penta3 measles1 stillbirth_f stillbirth_m total_stillbirth under5_deaths maternal_deaths ///
@@ -164,7 +163,6 @@ rename ( ///
 	diar_rep_rec diar_rep_exp diar_rr ///
 	ipd_rep_rec ipd_rep_exp ipd_rr ///
 	fp_rep_rec fp_rep_exp fp_rr ///
-	pop_rate total_pop under5_pop under1_pop live_births total_births women15_49 total_hospitals total_facilities total_workers total_beds ///
 )
 
 order orgunitlevel3 year month date datex

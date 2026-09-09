@@ -6,7 +6,7 @@
 *   Creation Date:	18/09/2024
 *
 * 	Purpose:		To merge the Countdown input data templates and produce the base analytical datasets that will be 
-*					required for the Countdown implementation of the Maina method
+*					required for implementation of the Maina approach
 *
 *   Details:		Part 0: Set global variables
 * 					Part 1: Import and rework individual data files
@@ -57,7 +57,6 @@ drop _merge
 merge 1:1 orgunitlevel3 subdistrict_group year month using "0c_viii_DHIMS2_template_svc_data_3_subd.dta"
 list orgunitlevel3 subdistrict_group year month _merge if _merge != 3	// to check discrepancy of key variables for merging
 drop _merge
-*br 
 
 gen _month = .
 replace _month = 1 if month == "January"
@@ -181,9 +180,9 @@ foreach var of varlist anc_rr idelv_rr pnc_rr vacc_rr opd_rr diar_rr ipd_rr fp_r
 									
 use "_completeness_subdistrictanc_rr", clear
 local reshapeddistrict: dir . files "_completeness_subdistrict*.dta"
-	foreach file of local reshapeddistrict {
+foreach file of local reshapeddistrict {
 	merge 1:1 orgunitlevel3 subdistrict_group year using "`file'"
-drop _merge
+	drop _merge
 }
 
 * save dataset in stata format
@@ -393,7 +392,7 @@ foreach var of varlist anc1 anc4 ipt2 idelv csection pnc48h bcg penta1 penta2 pe
 	replace lowc_`var' = 1 if rr_`var' < 75
 	replace lowc_`var' = 9 if rr_`var' == .
 	lab var lowc_`var' "District with `var' very low monthly reporting rate"
-	lab define 	lowc_`var' 0 ">=75% & <=100%" 1 "<75%" 9 "Missing"
+	lab define lowc_`var' 0 ">=75% & <=100%" 1 "<75%" 9 "Missing"
 	lab value lowc_`var' lowc_`var'
 	
 	bysort orgunitlevel3 subdistrict_group: egen maxlowc_`var' = max(lowc_`var')

@@ -9,10 +9,13 @@
 *					indicators (Penta2, Penta3, Measles1, diarrhoea service events amongst u1s)
 *
 *   Details:		Part 0: Set global variables
-* 					Part 1: Import and rework data files
-* 					Part 2: Produce demographic estimates from UN data and DHIMS2
-* 					Part 3: Estimate ANC1, Penta1 and BCG coverage based on projected live births
-* 					Part 4: Estimate coverage of multiple services based on denominators estimated from DHIMS2 Penta1 data
+*
+* 					Part 2: Estimate coverage of Penta2 and Penta3 vaccinations based on denominators estimated from DHIMS2  
+* 						Penta1 actvity ####
+* 					Part 3: Estimate coverage of measles1 vaccination based on denominators estimated from DHIMS2 Penta1
+*						actvity
+* 					Part 4: Estimate coverage/utilisation of diarrhoea service based on denominator estimated from DHIMS2  
+* 						Penta1 actvity
 * 					Appendix 1: Base script (1) sourced from Countdown (4a_Code_RHIS_DenominatorAssessment-FINAL.do)
 * 					Appendix 2: Base script (2) sourced from Countdown (4b_Code_RHIS_DenominatorAssessment-FINAL.do)
 *
@@ -36,27 +39,6 @@ global pnmr = 0.014 // national post-neonatal mortality rate
 global anc1_survey = 0.942 // ANC1 coverage
 
 global penta1_survey = 0.952 // penta1 coverage (crude coverage amongst children aged 12-23 months)
-
-
-*-----------------------------------------------------------------------------------------------------------------------
-* Part 1: Import and rework data files ####
-*-----------------------------------------------------------------------------------------------------------------------
-* import DHIMS2 dataset
-use "1c_iii_DHIMS2_master_adjusted_dataset.dta", clear
-
-keep orgunitlevel3 year total_pop under5_pop under1_pop pop_rate live_births women15_49 total_births
-rename total_pop pop_dhis2
-rename under5_pop under5_dhis2
-rename under1_pop under1_dhis2
-rename live_births livebirths_dhis2
-rename total_births allbirths_dhis2
-rename women15_49 wom15_49_dhis2
-
-bysort orgunitlevel3 year: gen firstrow = 1 if _n == 1
-keep if firstrow == 1
-sort year
- 
-save "1e_i_DHIMS2_population_data.dta", replace
 
 
 *-----------------------------------------------------------------------------------------------------------------------

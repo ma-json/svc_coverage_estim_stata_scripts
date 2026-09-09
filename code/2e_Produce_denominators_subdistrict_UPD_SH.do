@@ -9,10 +9,12 @@
 *					indicators (Penta2, Penta3, Measles1, diarrhoea service events amongst u1s)
 *
 *   Details:		Part 0: Set global variables
-* 					Part 1: Import and rework data files
-* 					Part 2: Produce demographic estimates from UN data and DHIMS2
-* 					Part 3: Estimate ANC1, Penta1 and BCG coverage based on projected live births
-* 					Part 4: Estimate coverage of multiple services based on denominators estimated from DHIMS2 Penta1 data
+* 					Part 1: Estimate coverage of Penta2 and Penta3 vaccinations based on denominators estimated from 
+* 						DHIMS2 Penta1 actvity
+* 					Part 2: Estimate coverage of measles1 vaccination based on denominators estimated from DHIMS2 
+*						Penta1 actvity
+* 					Part 3: Estimate coverage/utilisation of diarrhoea service based on denominator estimated from 
+* 						DHIMS2 Penta1 actvity
 * 					Appendix 1: Base script (1) sourced from Countdown (4a_Code_RHIS_DenominatorAssessment-FINAL.do)
 * 					Appendix 2: Base script (2) sourced from Countdown (4b_Code_RHIS_DenominatorAssessment-FINAL.do)
 
@@ -88,7 +90,7 @@ lab var subd_cov_penta3 "Coverage of Penta3 based on DHIMS2 Penta1 denominator (
 
 
 *-----------------------------------------------------------------------------------------------------------------------
-* Part 3: Estimate coverage of measles1 vaccination based on denominators estimated from DHIMS2 Penta1 actvity ####
+* Part 2: Estimate coverage of measles1 vaccination based on denominators estimated from DHIMS2 Penta1 actvity ####
 *-----------------------------------------------------------------------------------------------------------------------
 // compute measles1 utilisation by year
 sort orgunitlevel3 subdistrict_group year
@@ -109,7 +111,7 @@ lab var subd_cov_measles1 "Coverage of measles1 based on DHIMS2 Penta1 denominat
 
 
 *-----------------------------------------------------------------------------------------------------------------------
-* Part 4: Estimate coverage/utilisation of diarrhoea service based on denominator estimated from DHIMS2 Penta1 
+* Part 3: Estimate coverage/utilisation of diarrhoea service based on denominator estimated from DHIMS2 Penta1 
 * actvity ####
 *-----------------------------------------------------------------------------------------------------------------------
 // compute diarrhoea service events (under 1s) by year

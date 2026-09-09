@@ -6,7 +6,7 @@
 *   Creation Date:	12/10/2024
 *
 * 	Purpose:		To merge the Countdown input data templates and produce the base analytical datasets that will be 
-*					required for the Countdown implementation of the Maina method
+*					required for implementation of the Maina approach
 *
 *   Details:		Part 0: Set global variables
 * 					Part 1: Import and rework individual data files
@@ -180,9 +180,9 @@ foreach var of varlist anc_rr idelv_rr pnc_rr vacc_rr opd_rr diar_rr ipd_rr fp_r
 
 use "_completeness_hfanc_rr", clear
 local reshapeddistrict: dir . files "_completeness_hf*.dta"
-	foreach file of local reshapeddistrict {
+foreach file of local reshapeddistrict {
 	merge 1:1 orgunitlevel3 subdistrict_group organisationunitname organisationunitid year using "`file'"
-drop _merge
+	drop _merge
 }
 
 * save dataset in stata format
