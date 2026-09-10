@@ -9,10 +9,10 @@ This repository contains Stata scripts adapted for the present study to generate
 Matthew Johnson, University of Southampton
 
 ## Citation
- 
+
 If you use this code, please cite the associated publication:
 
-Johnson, M., et al. (2026). Title of the paper. Journal Name. DOI: xx.xxxx/xxxxx [to be added]
+Johnson, M., et al. (2026). DOI: xx.xxxx/xxxxx [to be added]
 
 The code repository is provided to support reproducibility of the published research.
 
