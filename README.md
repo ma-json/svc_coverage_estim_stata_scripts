@@ -20,11 +20,6 @@ The code repository is provided to support reproducibility of the published rese
 
 The scripts were developed using using Stata SE Version 16.0 (Stata-Corp, College Station, TX, USA)
 
-## Repository structure
- 
-code/
-  Stata scripts
-
 ## Workflow
 
 File names include a two-character prefix indicating the order in which they should be run. Run in ascending alphanumeric order
